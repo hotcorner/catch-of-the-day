@@ -2,21 +2,36 @@ import React from 'react';
 
 class AddFishForm extends React.Component {
 
+  nameRef = React.createRef();
+  priceRef = React.createRef();
+  statusRef = React.createRef();
+  descRef = React.createRef();
+  imageRef = React.createRef();
+
   createFish = (e) => {
-    e.preventdefault();
+    e.preventDefault();
+    const fish = {
+      name: this.nameRef.value.value,
+      price: this.priceRef.value.value,
+      status: this.statusRef.value.value,
+      desc: this.descRef.value.value,
+      image: this.imageRef.value.value
+    }
+    const {name, price, status, desc, image} = {...fish};
+    console.log(fish, name, price, status, desc, image);
   }
 
   render(){
     return (
       <form onSubmit={ this.createFish } className="fish-edit">
-        <input name="name" type="text" placeholder="name" />
-        <input name="price" type="text" placeholder="price" />
-        <select name="status">
+        <input name="name" ref={ this.nameRef } type="text" placeholder="name" />
+        <input name="price" ref={ this.priceRef } type="text" placeholder="price" />
+        <select name="status" ref={ this.statusRef }>
             <option value="available">Fresh!</option>
             <option value="unavailable">Sold Out!</option>
         </select>
-        <textarea name="desc" placeholder="desc"></textarea>
-        <input name="image" type="text" placeholder="image" />
+        <textarea name="desc" ref={ this.descRef } placeholder="desc"></textarea>
+        <input name="image" ref={ this.imageRef } type="text" placeholder="image" />
         <button type="submit">Add fish</button>
       </form>
     );
