@@ -3,8 +3,7 @@ node_modules/
 .DS_Store
 .idea
 notes.md
-<<<<<<< HEAD
 catch-of-the-day.code-workspace
-=======
 .vscode/settings.json
->>>>>>> 652c83da496729289f5016bf1e70849e82872ca3
+build/
+.netflify/state.json
