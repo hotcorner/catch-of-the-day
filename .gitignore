@@ -6,4 +6,4 @@ notes.md
 catch-of-the-day.code-workspace
 .vscode/settings.json
 build/
-.netflify/state.json
+src/base.js
